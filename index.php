@@ -1,3 +1,3 @@
 <?php
-echo "Hello from PHP app!";
+echo "Hello from PHP app after update!";
 ?>
