@@ -1,6 +1,6 @@
 [
   {
-    "name": "php-app",  // This should match the container name in your ECS task definition
-    "imageUri": "009160060366.dkr.ecr.us-west-1.amazonaws.com/phpapprepo:latest"  // Your ECR image URI
+    "name": "php-app",
+    "imageUri": "009160060366.dkr.ecr.us-west-1.amazonaws.com/phpapprepo:latest"
   }
 ]
