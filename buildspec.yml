@@ -8,12 +8,15 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t cicdrepo .
-      - docker tag cicdrepo:latest 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:latest
+      - docker build -t newphpapp .  # Changed to newphpapp
+      - docker tag newphpapp:latest 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:newphpapp  # Changed to newphpapp
   post_build:
     commands:
-      - echo Pushing the Docker image...
-      - docker push 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:latest
+      - echo Pushing the Docker image to ECR...
+      - docker push 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:newphpapp  # Changed to newphpapp
+      - echo '[{"name":"newphpapp","imageUri":"009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:newphpapp"}]' > imagedefinitions.json  # Changed to newphpapp
+      - echo Creating artifact...
 artifacts:
   files:
     - imagedefinitions.json
+    - '**/*'  # Modify as necessary
