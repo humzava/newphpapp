@@ -8,13 +8,13 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t newphpapp .  # Changed to newphpapp
-      - docker tag newphpapp:latest 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:newphpapp  # Changed to newphpapp
+      - docker build -t php-service-new .  # Updated service name
+      - docker tag php-service-new:latest 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:php-service-new  # Updated service name
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
-      - docker push 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:newphpapp  # Changed to newphpapp
-      - echo '[{"name":"newphpapp","imageUri":"009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:newphpapp"}]' > imagedefinitions.json  # Changed to newphpapp
+      - docker push 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:php-service-new  # Updated service name
+      - echo '[{"name":"php-service-new","imageUri":"009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:php-service-new"}]' > imagedefinitions.json  # Updated service name
       - echo Creating artifact...
 artifacts:
   files:
