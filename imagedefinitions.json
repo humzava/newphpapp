@@ -1,6 +1,0 @@
-[
-  {
-    "name": "php-app",
-    "imageUri": "009160060366.dkr.ecr.us-west-1.amazonaws.com/phpapprepo:latest"
-  }
-]
