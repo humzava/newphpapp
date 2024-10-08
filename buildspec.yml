@@ -12,11 +12,8 @@ phases:
       - docker tag cicdrepo:latest 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:latest
   post_build:
     commands:
-      - echo Pushing the Docker image to ECR...
+      - echo Pushing the Docker image...
       - docker push 009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:latest
-      - echo '[{"name":"cicdrepo","imageUri":"009160060366.dkr.ecr.ap-south-1.amazonaws.com/cicdrepo:latest"}]' > imagedefinitions.json
-      - echo Creating artifact...
 artifacts:
   files:
     - imagedefinitions.json
-    - '**/*'  # Modify as necessary
